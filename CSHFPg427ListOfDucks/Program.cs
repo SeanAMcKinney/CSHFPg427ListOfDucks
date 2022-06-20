@@ -24,7 +24,8 @@ namespace CSHFPg427ListOfDucks
                 new Duck() { Kind = KindOfDuck.Mallard, Size = 14 },
                 new Duck() { Kind = KindOfDuck.Loon, Size = 13 },
             };
-            ducks.Sort();
+            IComparer<Duck> sizeComparer = new DuckComparerBySize();
+            ducks.Sort(sizeComparer);
             PrintDucks(ducks);
         }
     }
